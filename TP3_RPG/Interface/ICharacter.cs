@@ -5,19 +5,19 @@ public interface ICharacter {
 	// States
 	
 	// a character has a name
-	public string name { get; }
+	public string Name { get; }
 	// a character has a level
-	public int level { get; set; }
+	public int Level { get; set; }
 	// a character has experiance
-	public int xp { get; set;  }
+	public int Xp { get; set;  }
 	// a character has a health
-	public double health { get; set; }
+	public double Health { get; set; }
 	// a character has a strength
-	public double strength { get; set; }
+	public double Strength { get; set; }
 	// a character has a defense
-	public int defense { get; set; }
+	public int Defense { get; set; }
 	// a character has a speed
-	public int speed { get; set; }
+	public int Speed { get; set; }
 	
 	// Methods
 	// a character can attack
