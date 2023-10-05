@@ -21,7 +21,8 @@ public interface ICharacter {
 	
 	// Methods
 	// a character can attack
-	// this method will calculate the damage and call the BeAttacked function on the target
+	// this method will calculate the damage and call t
+	// he BeAttacked function on the target
 	public void Attack(ICharacter target);
 	// a character can be attacked
 	// this method will calculate the damage and apply it to the health

@@ -21,7 +21,10 @@ public abstract class Character : ICharacter {
 	public void BeAttacked(double damage, ICharacter attacker)
 	{
 		double dmg = (damage - defense);
-		dmg = Math.Clamp(dmg, 0, 1000); // TODO : need to find a better way to clamp the value down but not up
+		if (dmg < 0)
+		{
+			dmg = 0;
+		}
 		health = health - dmg;
 	}
 }
