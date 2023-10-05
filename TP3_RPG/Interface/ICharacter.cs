@@ -26,7 +26,7 @@ public interface ICharacter {
 	public void Attack(ICharacter target);
 	// a character can be attacked
 	// this method will calculate the damage and apply it to the health
-	public void BeAttacked(int damage, ICharacter attacker);
+	public void BeAttacked(double damage, ICharacter attacker);
 	
 	
 }
