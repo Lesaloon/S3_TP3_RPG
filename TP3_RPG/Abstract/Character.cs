@@ -4,13 +4,17 @@ namespace TP3_RPG.Abstract;
 
 public abstract class Character : ICharacter {
 	public string Name { get; }
-	public int Level { get; set; }
-	public int Xp { get; set;  }
-	public double Health { get; set; }
-	public double Strength { get; set; }
-	public int Defense { get; set; }
-	public int Speed { get; set; }
+	public int Level { get; set; } = 1;
+	public int Xp { get; set; } = 0;
+	public double Health { get; set; } = 100;
+	public double Strength { get; set; } = 10;
+	public int Defense { get; set; } = 5;
+	public int Speed { get; set; } = 5;
 
+	public Character(string name)
+	{
+		this.Name = name;
+	}
 	public void Attack(ICharacter target)
 	{
 		Random rnd = new Random();
