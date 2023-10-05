@@ -11,9 +11,9 @@ public interface ICharacter {
 	// a character has experiance
 	public int xp { get; set;  }
 	// a character has a health
-	public int health { get; set; }
+	public double health { get; set; }
 	// a character has a strength
-	public int strength { get; set; }
+	public double strength { get; set; }
 	// a character has a defense
 	public int defense { get; set; }
 	// a character has a speed
