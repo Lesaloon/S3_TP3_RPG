@@ -26,16 +26,20 @@ public abstract class Character : ICharacter {
 		// try to dodge
 		if (this.Strength - attacker.Speed > 0) {
 			Random rnd = new Random();
-			double dodge = (this.Strength - attacker.Speed) * (rnd.NextDouble() * (this.Strength - attacker.Speed) * 0.1);
-			if (dodge > damage) {
+			double chanceOfDodge = 1 / this.Strength - attacker.Speed;
+			if (rnd.NextDouble() > chanceOfDodge) {
 				Console.WriteLine(this.Name + " dodged the attack !");
 				return;
 			}
 		}
 		
-		double dmg = (damage - Defense);
+		double dmg = (damage - Defense*0.1);
 		dmg = dmg < 0 ? 0 : dmg;
 		Health = Health - dmg;
 		Console.WriteLine(this.Name + " was hit straight in the face");
+	}
+	
+	public bool IsAlive() {
+		return Health > 0;
 	}
 }
