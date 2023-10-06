@@ -22,13 +22,20 @@ public abstract class Character : ICharacter {
 		target.BeAttacked(damage, this);
 	}
 
-	public void BeAttacked(double damage, ICharacter attacker)
-	{
-		double dmg = (damage - Defense);
-		if (dmg < 0)
-		{
-			dmg = 0;
+	public void BeAttacked(double damage, ICharacter attacker) {
+		// try to dodge
+		if (this.Strength - attacker.Speed > 0) {
+			Random rnd = new Random();
+			double dodge = (this.Strength - attacker.Speed) * (rnd.NextDouble() * (this.Strength - attacker.Speed) * 0.1);
+			if (dodge > damage) {
+				Console.WriteLine(this.Name + " dodged the attack !");
+				return;
+			}
 		}
+		
+		double dmg = (damage - Defense);
+		dmg = dmg < 0 ? 0 : dmg;
 		Health = Health - dmg;
+		Console.WriteLine(this.Name + " was hit straight in the face");
 	}
 }
