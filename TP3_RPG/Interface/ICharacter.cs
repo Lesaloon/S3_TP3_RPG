@@ -3,13 +3,13 @@ namespace TP3_RPG.Interface;
 public interface ICharacter {
 	
 	// States
-	
+
 	// a character has a name
 	public string Name { get; }
 	// a character has a level
 	public int Level { get; set; }
 	// a character has experiance
-	public int Xp { get; set;  }
+	public int Xp { get; set; }
 	// a character has a health
 	public double Health { get; set; }
 	// a character has a strength
